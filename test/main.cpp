@@ -11,10 +11,6 @@ void test_logging(logger_type& lg, std::string const& channel_name)
 */
 int main(int ac, char** av) {
 
-	gal::log::min_severity["general"] = info;
-
-	gal::log::init();
-	
 	BOOST_LOG_CHANNEL_SEV(gal::log::lg, "general", info) << "A normal severity level message" << GAL_LOG_ENDLINE;
 	BOOST_LOG_CHANNEL_SEV(gal::log::lg, "general", debug) << "A debug severity level message" << GAL_LOG_ENDLINE;
 

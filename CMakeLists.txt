@@ -1,7 +1,6 @@
 cmake_minimum_required (VERSION 2.8.8)
 
-SET(CMAKE_CXX_COMPILER /scratch/usr/bin/g++)
-SET(CMAKE_INSTALL_PREFIX $ENV{HOME}/usr)
+INCLUDE($ENV{HOME}/.config.cmake)
 
 project(Galaxy-Log)
 
@@ -16,7 +15,7 @@ find_package(CMakeHelper)
 
 #SET(GRU_VERSION 0.1.1)
 
-cmh_static_library()
+cmh_header_only()
 
 add_subdirectory(test)
 
