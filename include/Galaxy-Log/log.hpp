@@ -26,7 +26,7 @@ namespace gal {
 	}
 }
 
-std::ostream& operator<< (std::ostream& strm, severity_level level) {
+inline std::ostream& operator<< (std::ostream& strm, severity_level level) {
 	static const char* strings[] =
 	{
 		"debug",
