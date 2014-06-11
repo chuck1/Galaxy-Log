@@ -29,7 +29,7 @@ BOOST_LOG_ATTRIBUTE_KEYWORD(channel,    "Channel",      std::string)
 
 namespace gal {
 	namespace log {
-		typedef expr::channel_severity_filter_actor< std::string, severity_level >		min_severity_filter;
+		typedef expr::channel_severity_filter_actor< ::std::string, severity_level >		min_severity_filter;
 
 		extern min_severity_filter	min_severity;
 
