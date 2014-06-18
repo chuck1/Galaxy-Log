@@ -11,7 +11,7 @@ void		gal::log::init() {
 
 	logging::add_console_log
 		(
-		 std::clog,
+		 std::cout,
 		 keywords::filter = min_severity || severity >= critical,
 		 keywords::format =
 		 (
