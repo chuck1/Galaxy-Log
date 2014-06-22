@@ -6,7 +6,7 @@ project(Galaxy-Log)
 
 find_package(CMakeHelper)
 
-FIND_PACKAGE(Boost 1.55 COMPONENTS log system thread)
+FIND_PACKAGE(Boost 1.55 COMPONENTS log system thread REQUIRED)
 
 
 # include_directories
