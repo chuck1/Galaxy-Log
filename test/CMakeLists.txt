@@ -4,6 +4,7 @@ PROJECT(test)
 
 INCLUDE($ENV{HOME}/.config.cmake)
 
+SET(libs galaxy_log ${libs})
 
 link_exe()
 

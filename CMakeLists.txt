@@ -2,9 +2,14 @@ cmake_minimum_required (VERSION 2.8.8)
 
 INCLUDE($ENV{HOME}/.config.cmake)
 
-project(Galaxy-Log)
+project(galaxy_log)
 
 find_package(CMakeHelper)
+
+
+set(Boost_USE_STATIC_LIBS OFF)
+set(Boost_USE_STATIC_RUNTIME OFF)
+add_definitions( -DBOOST_ALL_DYN_LINK )
 
 FIND_PACKAGE(Boost 1.55 COMPONENTS log system thread REQUIRED)
 
@@ -18,9 +23,12 @@ FIND_PACKAGE(Boost 1.55 COMPONENTS log system thread REQUIRED)
 
 #SET(GRU_VERSION 0.1.1)
 
-SET(libs ${libs} Galaxy-Log ${Boost_LIBRARIES} pthread rt)
+SET(libs
+	${Boost_LIBRARIES}
+	pthread
+	rt)
 
-cmh_static_library()
+cmh_shared_library()
 
 add_subdirectory(test)
 
