@@ -4,6 +4,9 @@ INCLUDE($ENV{HOME}/.config.cmake)
 
 project(galaxy_log)
 
+SET(galaxy_log_STATIC TRUE)
+SET(galaxy_log_SHARED TRUE)
+
 find_package(CMakeHelper)
 
 
@@ -28,7 +31,7 @@ SET(libs
 	pthread
 	rt)
 
-cmh_shared_library()
+cmh_library()
 
 add_subdirectory(test)
 
