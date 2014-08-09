@@ -1,4 +1,4 @@
-#include <Galaxy-Log/log.hpp>
+#include <gal/log/log.hpp>
 
 void test_logging(std::string const& channel_name) {
 	

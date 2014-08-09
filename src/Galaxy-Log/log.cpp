@@ -1,4 +1,4 @@
-#include <Galaxy-Log/log.hpp>
+#include <gal/log/log.hpp>
 
 gal::log::min_severity_filter		gal::log::min_severity = expr::channel_severity_filter(channel, severity);
 
