@@ -1,35 +1,15 @@
 #include <gal/log/log.hpp>
 
-gal::log::min_severity_filter		gal::log::min_severity = expr::channel_severity_filter(channel, severity);
-
-logger_type				lg;
-
-void		gal::log::init() {
-	// Create a minimal severity table filter
-
-	// Set up the minimum severity levels for different channels
-
-	logging::add_console_log
-		(
-		 std::cout,
-		 keywords::filter = min_severity || severity >= critical,
-		 keywords::format =
-		 (
-		  expr::stream
-		  << line_id
-		  << ": <" << severity
-		  << "> [" << channel << "] "
-		  << expr::smessage
-		 )
-		);
+gal::log::base::base(ostream& ss): ss_(ss) {
 }
-void		gal::log::refresh() {
-	logging::add_common_attributes();
+gal::log::base::base(gal::log::base&& base):
+	ss_(base.ss_)
+{}
+gal::log::base::~base() {
+	ss_ << endl;
 }
 
-
-
-
+ostream& lg = cout;
 
 
 
