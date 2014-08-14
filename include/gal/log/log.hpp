@@ -5,7 +5,7 @@
 #include <iostream>
 #include <sstream>
 
-#define LOG(lg, channel, sev) if(sev > channel) gal::log::base(lg)
+#define LOG(lg, channel, sev) if(sev >= channel) gal::log::base(lg)
 
 using namespace std;
 
@@ -24,9 +24,10 @@ namespace gal {
 			base(ostream& ss);
 			base(base&& b);
 			~base();
-			template<typename T> base		operator<<(T const & t) {
+			template<typename T> base&		operator<<(T const & t) {
 				ss_ << t;
-				return move(*this);
+				//return move(*this);
+				return *this;
 			}
 			ostream&				ss_;
 		};
