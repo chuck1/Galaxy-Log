@@ -7,8 +7,6 @@
 
 #define LOG(lg, channel, sev) if(sev >= channel) gal::log::base(lg)
 
-using namespace std;
-
 enum severity_level {
 	debug,
 	info,
@@ -21,7 +19,7 @@ namespace gal {
 	namespace log {
 		/** @brief temporary stringstream */
 		struct base {
-			base(ostream& ss);
+			base(std::ostream& ss);
 			base(base&& b);
 			~base();
 			template<typename T> base&		operator<<(T const & t) {
@@ -29,7 +27,7 @@ namespace gal {
 				//return move(*this);
 				return *this;
 			}
-			ostream&				ss_;
+			std::ostream&				ss_;
 		};
 
 		void		init();
@@ -37,7 +35,7 @@ namespace gal {
 	}
 }
 
-extern ostream& lg;
+extern std::ostream& lg;
 
 inline std::ostream& operator<< (std::ostream& strm, severity_level level) {
 	static const char* strings[] = {
