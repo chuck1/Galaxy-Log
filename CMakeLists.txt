@@ -21,6 +21,6 @@ SET(libs
 
 INCLUDE(cmh_library)
 
-add_subdirectory(test)
+#add_subdirectory(test)
 
 

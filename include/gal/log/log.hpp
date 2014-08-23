@@ -4,6 +4,7 @@
 #include <cstddef>
 #include <iostream>
 #include <sstream>
+#include <iomanip>
 
 #define LOG(lg, channel, sev) if(sev >= channel) gal::log::base(lg)
 
