@@ -10,12 +10,11 @@ INCLUDE(cmh_build_config)
 
 INCLUDE(cmh_boost)
 FIND_PACKAGE(Boost 1.55 COMPONENTS
-	system
-	thread
 	REQUIRED)
 
+
 SET(libs
-	${Boost_LIBRARIES}
+	#${Boost_LIBRARIES}
 	pthread
 	rt)
 
