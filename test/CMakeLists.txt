@@ -1,4 +1,4 @@
-PROJECT(test)
+PROJECT(test_galaxy_log)
 
-link_exe()
+include(cmh_executable)
 
