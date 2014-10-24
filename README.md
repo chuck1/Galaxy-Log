@@ -1,4 +1,5 @@
 Galaxy-Log
 ==========
 
-generic boost log setup
+## News
+- No longer uses boost-log
