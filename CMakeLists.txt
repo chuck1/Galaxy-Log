@@ -8,6 +8,8 @@ project(galaxy_log)
 INCLUDE(../../../../config.cmake)
 INCLUDE(cmh_build_config)
 
+SET(SHARED True)
+
 INCLUDE(cmh_boost)
 FIND_PACKAGE(Boost 1.55 COMPONENTS
 	REQUIRED)
@@ -20,6 +22,6 @@ SET(libs
 
 INCLUDE(cmh_library)
 
-add_subdirectory(test)
+#add_subdirectory(test)
 
 
