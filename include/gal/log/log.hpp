@@ -8,6 +8,11 @@
 
 #define LOG(lg, channel, sev) if(sev >= channel) gal::log::base(lg)
 
+template <typename... Args> void logprint(int channel, int sev, char const * format, Args... args)
+{
+	if(sev >= channel) printf(format, args...);
+}
+
 enum severity_level {
 	debug,
 	info,
