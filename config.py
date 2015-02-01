@@ -26,7 +26,7 @@ INCLUDE(cmh_library)
 #add_subdirectory(test)
 """
 
-l = Library("galaxy_log")
+l = Static("galaxy_log")
 
 l.make()
 
